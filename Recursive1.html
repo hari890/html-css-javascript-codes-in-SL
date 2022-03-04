@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>
+Assignment
+</title>
+</head>
+<body>
+	<form name="myform" onsubmit="calculate()">
+	<input name="fact" type="number" placeholder="factorial"><br><br>
+	<input name="fib" type="number" placeholder="fibnocci"><br><br>
+	<input type="number" name="power" placeholder="power"><input type="number" name="raise" placeholder="raise"><br><br>
+	<input type = "submit">
+	</form>
+<script>
+	
+	function factorial(n){
+		if(n==1){
+			return 1;
+		}
+		return n*factorial(n-1);
+	}
+
+	function power(n,p){
+		if(p==1){
+			return n;
+		}
+		return n*power(n,--p);
+	}
+
+	function fibnocci(n){
+		if(n==1){
+			return 1;
+		}
+		if(n==0){
+			return 0;
+		}
+		return fibnocci(n-1)+fibnocci(n-2);
+	}
+			
+	function calculate(){
+		n1=document.forms["myform"]["fib"].value;
+		n2=document.forms["myform"]["fact"].value;
+		n3=document.forms["myform"]["power"].value;
+		n4=document.forms["myform"]["raise"].value;
+		document.writeln("fibnocci of "+n1+" is "+fibnocci(n1)+"<br>");
+		document.writeln("factorial of "+n2+" is "+factorial(n2)+"<br>");
+		document.writeln(n3+" power "+n4+" is "+power(n3,n4)+"<br>");
+	}
+</script>
+</body>
+</html>
