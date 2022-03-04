@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>javascript</title>
+</head>
+<body>
+<table border="1" id="table">
+	<tr>
+		<th>Number</th>
+		<th>Square</th>
+		<th>Cube</th>
+	</tr>
+</table>
+
+<script>
+	for(i=0;i<10;i++){
+		square = i*i;
+		cube = i*i*i;
+		document.getElementById("table");
+  table.innerHTML+="<tr><td>"+i+"</td><td>"+square+"</td><td>"+cube+"</td></tr>";  
+}
+</script>
+</body>
+</html>
