@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <form name="myform" onsubmit="return validateForm()" action="#">
+            <label for="fname">First Name:</label><input name="fname" type="text" required><br>
+            <p id="fname"></p>
+            <label for="password">password:</label><input name="password" type="password" required><br>
+            <p id="password"></p>
+            <label for="email">Email:</label><input name="email" type="email" required><br><br>
+            <label for="phone">Phone No:</label><input name="phone" type="number" required><br>
+            <p id="phone"></p>
+            <input type="submit">
+        </form>
+
+        <script>
+         function validateForm(){
+                valid = true;
+                let para;
+                let warning;
+                fname= document.forms["myform"]["fname"].value;
+                pswd=document.forms["myform"]["password"].value;
+                phone=document.forms["myform"]["phone"].value;
+                if(fname.length < 6){
+                    para = document.getElementById("fname");
+                    warning = "* minimum length of first name should be 6!<br>"
+                    para.innerHTML+=warning;
+                    para.style.color="red";
+                    para.style.fontSize=12+"px";
+                    valid = false;
+                }
+                let reg = /[0-9]/;
+                if(reg.test(fname)){
+                    para = document.getElementById("fname");
+                    warning = "* name should contain only alphabets!"
+                    para.innerHTML+=warning;
+                    para.style.color="red";
+                    para.style.fontSize=12+"px";
+                    valid = false;
+                }
+                if(pswd.length < 6){
+                    para = document.getElementById("password");
+                    warning = "* minimum length of password should be 6!"
+                    para.innerHTML+=warning;
+                    para.style.color="red";
+                    para.style.fontSize=12+"px";
+                    valid = false;
+                }
+                if(phone.length != 10){
+                    para = document.getElementById("phone");
+                    warning = "* phone number must have 10 digits!"
+                    para.innerHTML+=warning;
+                    para.style.color="red";
+                    para.style.fontSize=12+"px";
+                    valid = false;
+                }
+                return valid;
+                console.log(valid);
+            }
+            
+        </script>
+    </body>
+</html>
