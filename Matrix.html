@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>
+Assignment
+</title>
+</head>
+<body>
+<script>
+ var rows = parseInt(window.prompt("Enter the no of rows:"));
+ var cols = parseInt(window.prompt("Enter the no of cols:"));
+ var matrix1=new Array(rows);
+ var matrix2=new Array(rows);
+ for(var i=0;i<rows;i++){
+   matrix1[i]=new Array(cols);
+   matrix2[i]=new Array(cols);
+ }
+ for(var i=0;i<rows;i++){
+   for(var j=0;j<cols;j++){
+	matrix1[i][j]=parseInt(window.prompt("Enter the value of matrix1["+i+"]["+j+"]"));
+   }
+ }
+ for(var i=0;i<rows;i++){
+   for(var j=0;j<cols;j++){
+	matrix2[i][j]=parseInt(window.prompt("Enter the value of matrix2["+i+"]["+j+"]"));
+   }
+ }
+function add(matrix1,matrix2){
+  for(var i=0;i<rows;i++){
+   for(var j=0;j<cols;j++){
+	document.writeln(matrix1[i][j]+matrix2[i][j]);
+   }
+	document.writeln("<br>");
+ }
+}
+function display(matrix){
+	for(var i=0;i<rows;i++){
+   for(var j=0;j<cols;j++){
+	document.writeln(matrix[i][j]);
+   }
+	document.writeln("<br>");
+ }
+}
+
+function mult(matrix1,matrix2){
+  for(var i=0;i<rows;i++){
+   for(var j=0;j<cols;j++){
+	var val=0;
+    for(var k=0;k<rows;k++){
+	val+=matrix1[i][k]*matrix2[k][j];
+    }
+    document.writeln(val);
+   }
+document.writeln("<br>");
+  }
+}
+document.writeln("Matrix1");
+display(matrix1)
+document.writeln("<br>Matrix2<br>");
+display(matrix2)
+document.writeln("<br>Addition<br>");
+add(matrix1,matrix2);
+document.writeln("<br>Multiplication<br>");
+mult(matrix1,matrix2);
+</script>
+</body>
+</html>
