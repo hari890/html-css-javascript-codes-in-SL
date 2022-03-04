@@ -1,0 +1,39 @@
+<html>
+<head>
+    
+    <title>animate</title>
+</head>
+<body>
+    <span id="text">Text Growing!</span>
+<script>
+    let text = document.getElementById("text");
+    let x =0;
+    let id = setInterval(grow,100);
+    let id2;
+    function grow(){
+        text.innerHTML="Text growing!";
+        text.style.color="green";
+        if(x>=50){
+        text.innerHTML="Text Shrinking!";
+        text.style.color="red";
+        clearInterval(id);
+        id2=setInterval(shrink,100);
+        }
+        else{
+            x++;
+        }
+        text.style.fontSize=x+"px";
+    }
+    function shrink(){
+            if(x<=1){
+                clearInterval(id2);
+                id = setInterval(grow,100);
+            }
+            else{
+                x--;
+            }
+            text.style.fontSize=x+"px";
+        }
+</script>
+</body>
+</html>
